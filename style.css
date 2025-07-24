@@ -1,0 +1,282 @@
+/* Reset e básicos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #000000, #5e0000);
+  color: #eee;
+  min-height: 100vh;
+  line-height: 1.4;
+  padding-top: 50px; /* espaço para o menu fixo */
+}
+
+/* Menu fixo no topo */
+.top-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.top-menu nav {
+  display: flex;
+  gap: 30px;
+}
+
+.top-link {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: none; /* sem efeito hover */
+  cursor: pointer;
+}
+
+.top-link:hover {
+  color: white; /* sempre branco */
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Geral para seções centrais */
+.container {
+  max-width: 900px;
+  margin: 20px auto 40px;
+  padding: 0 15px;
+}
+
+/* Hotel Info (index.html) */
+.hotel-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+.hotel-grande {
+  flex: 1 1 400px;
+  max-width: 400px;
+  border-radius: 14px;
+  object-fit: cover;
+  /* remover borda/neon */
+  box-shadow: none;
+}
+
+.descricao-hotel {
+  flex: 1 1 400px;
+}
+
+.descricao-hotel h2 {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #690808;
+}
+
+.descricao-hotel p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Animação simples das imagens (index.html) */
+.animada {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.animada img {
+  width: 300px;
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  box-shadow: none; /* remove bordas/verdes */
+  border: none;
+}
+
+.animada img.ativo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Página Entrada ===== */
+.entrada-form {
+  background-color: transparent;
+  backdrop-filter: blur(15px); /* Quantidade de desfoque */
+  -webkit-backdrop-filter: blur(8px);
+  padding: 25px 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: 40px auto;
+  box-shadow: 0 0 10px #fffcfc88;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow: hidden;
+}
+
+.entrada-form label {
+  font-weight: 600;
+  color: #ebebeb;
+}
+
+.entrada-form input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: #f0f0f0;
+  color: #333;
+  box-shadow: inset 1px 1px 4px #bbb;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.entrada-form button {
+  margin-top: 15px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.entrada-form button:hover {
+  background-color: #ca1b1b;
+}
+
+.msg-erro {
+  color: red;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ===== Página Valores ===== */
+.valores-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.valores-titulo {
+  color: white; /* título branco */
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.valores-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.valor-item {
+  background: #222;
+  padding: 25px 20px;
+  border-radius: 14px;
+  width: 250px;
+  color: white; /* texto branco */
+  box-shadow: 0 0 15px #000000aa;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  cursor: default;
+}
+
+.valor-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.valor-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.valor-titulo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: white; /* branco */
+}
+
+.valor-desc {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  color: white; /* branco */
+}
+
+/* Botão WhatsApp específico valores.html (verde) */
+.btn-whatsapp-verde {
+  display: inline-block;
+  background-color: #750000;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 12px 25px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 30px;
+  transition: none; /* sem hover de cor */
+}
+
+.btn-whatsapp-verde:hover {
+  background-color: #4d0303; /* sem mudança */
+  color: white;
+}
+
+/* Botão WhatsApp geral para entrada e index (branco) */
+.btn-whatsapp {
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 12px 25px;
+  border-radius: 12px;
+  border: 2px solid white;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: white;
+  color: #520604;
+}
+
+/* Centralizar botão na página valores */
+.btn-container {
+  text-align: center;
+  margin-top: 30px;
+}

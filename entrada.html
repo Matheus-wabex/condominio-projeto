@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entrada - Hotel Condomínio Fictício</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-menu">
+    <nav>
+      <a href="index.html" class="top-link">Início</a>
+      <a href="entrada.html" class="top-link">Entrada</a>
+      <a href="valores.html" class="top-link">Valores</a>
+    </nav>
+  </header>
+
+  <main>
+    <form class="entrada-form" id="entradaForm">
+      <label for="cpf">CPF</label>
+      <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required />
+
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+
+      <label for="telefone">Telefone</label>
+      <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required />
+
+      <button type="submit">Liberar Entrada</button>
+      <p class="msg-erro" id="msgErro"></p>
+    </form>
+  </main>
+
+  <script src="entrada.js"></script>
+</body>
+</html>
